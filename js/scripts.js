@@ -6,10 +6,13 @@ function createPattern(number, userName) {
   var sorry = whichName(userName); //Numbers divisible by 3
   var beep = "Beep!" //Numbers with zeros
   var boop = "Boop!" //Numbers with ones
+  var tooHigh = "You've gone too high! You've pushed beyond the limits of my understanding!"
   var finalPhrase = ""; //The final phrase
 
   if (Number.isNaN(number) === true) {
     finalPhrase = finalPhrase.concat(error);
+  } else if (number > 500) {
+    finalPhrase = finalPhrase.concat(tooHigh);
   } else {
       for (i = 0; i <= number; i++) {
         if (i % 3 === 0 && i !== 0) { //checks for divisibility by 3
