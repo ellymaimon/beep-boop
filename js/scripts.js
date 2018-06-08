@@ -1,10 +1,15 @@
 //Business Logic
 function createPattern(number) {
-  var numberArray = number.split("");
+  var sorry = "I'm sorry Dave, I'm afraid I can't do that."
+  var zeros = "Beep!"
+  var ones = "Boop!"
+  var numberArray = number.toString().split("");
   console.log(numberArray);
 
   for (i = 0; i <= number; i++) {
+    if (i % 3 === 0) {
 
+    }
   }
 
 }
