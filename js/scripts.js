@@ -12,7 +12,7 @@ function createPattern(number) {
     finalPhrase = finalPhrase.concat(error);
   } else {
       for (i = 0; i <= number; i++) {
-        if (i % 3 === 0 && i !== 0) {
+        if (i % 3 === 0 && i !== 0) { //checks for divisibility by 3
           finalPhrase = finalPhrase.concat(sorry + " ");
         } else if (i === 1 || hasOnes(i) === true) {
           finalPhrase = finalPhrase.concat(boop + " ");
@@ -27,7 +27,7 @@ function createPattern(number) {
   return finalPhrase;
 }
 
-//Function that checks for ones
+//Function that checks digits for ones
 function hasOnes(number) {
   var digits = number.toString().split("");
   var total = 0;
@@ -41,7 +41,7 @@ function hasOnes(number) {
   }
 }
 
-//Function that checks for zeros
+//Function that checks digits for zeros
 function hasZeros(number) {
   var digits = number.toString().split("");
   var total = 0;
@@ -61,7 +61,9 @@ function hasZeros(number) {
 $(function() {
   $("button#submit").click(function() {
     var initialNumber = parseInt($("#input-number").val());
+    var userName = parseInt($("#input-name").val());
     console.log(initialNumber);
+    $(".pre-submit").hide();
     $(".results").show();
     var finalAnswer = createPattern(initialNumber);
     $("#final-result").text(finalAnswer);
