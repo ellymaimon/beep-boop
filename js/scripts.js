@@ -4,7 +4,6 @@
 function createPattern(number, userName) {
   var error = "Don't be silly. I can't do math on things that aren't a number." //Non-numbers
   var sorry = whichName(userName); //Numbers divisible by 3
-  console.log(sorry);
   var beep = "Beep!" //Numbers with zeros
   var boop = "Boop!" //Numbers with ones
   var finalPhrase = ""; //The final phrase
@@ -27,11 +26,13 @@ function createPattern(number, userName) {
   return finalPhrase;
 }
 
+//Function spits out Dave for no user name entry
 function whichName(userName) {
-  if (userName = "") {
-    return "I'm sorry " + userName + ", I'm afraid I can't do that."
-  } else {
-    return "I'm sorry, Dave, I'm afraid I can't do that."
+  if (userName === "") {
+    return "I'm sorry, Dave, I'm afraid I can't do that.";
+  }
+  else {
+    return "I'm sorry, " + userName + ", I'm afraid I can't do that.";
   }
 }
 
@@ -63,8 +64,6 @@ function hasZeros(number) {
   }
 }
 
-
-
 //UI Logic
 $(function() {
   $("form").submit(function(event) {
@@ -75,5 +74,9 @@ $(function() {
     $(".results").show();
     var finalAnswer = createPattern(initialNumber, userName);
     $("#final-result").text(finalAnswer);
+  });
+
+  $("button#restart").click(function(){
+    location.reload();
   });
 });
