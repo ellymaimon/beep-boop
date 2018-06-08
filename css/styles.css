@@ -3,12 +3,42 @@ body {
   color: white;
   margin-top: 25px;
   margin-bottom: 25px;
+  font-family: 'Audiowide', sans-serif;
 }
+
+#input-name {
+  color: green;
+  font-size: 20px;
+}
+
+#input-number {
+  color: green;
+  font-size: 20px;
+}
+
 
 .results {
   display: none;
 }
 
+button {
+  font-family: sans-serif;
+}
+
+#restart {
+  margin: 10px;
+}
+
+p {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  padding: 10px 40px 40px 40px;
+}
+
 img {
   max-height: 250px;
 }
+
+
+/* font-family: 'VT323', monospace;
+font-family: 'Audiowide', cursive; */
