@@ -2,17 +2,22 @@
 
 //Function that creates the pattern to be displayed to the user
 function createPattern(number) {
-  var sorry = "I'm sorry Dave, I'm afraid I can't do that."
-  var beep = "Beep!" //zeros
-  var boop = "Boop!" //ones
-
-  for (i = 0; i <= number; i++) {
-    if (i % 3 === 0) {
-      return sorry;
-    } else if (hasOnes(i)) {
-      return boop;
-    } else if (hasZeros(i)) {
-      return beep;
+  var error = "Don't be silly. I can't do math on things that aren't a number." //Non-numbers
+  var sorry = "I'm sorry Dave, I'm afraid I can't do that." //Numbers divisible by 3
+  var beep = "Beep!" //Numbers with zeros
+  var boop = "Boop!" //Numbers with ones
+if (number === NaN) {
+  return error;
+} else {
+    for (i = 0; i <= number; i++) {
+      if (i % 3 === 0) {
+        console.log(sorry);
+        return sorry;
+      } else if (hasOnes(i)) {
+        return boop;
+      } else if (hasZeros(i)) {
+        return beep;
+      }
     }
   }
 
