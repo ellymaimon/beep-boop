@@ -6,38 +6,43 @@ function createPattern(number) {
   var sorry = "I'm sorry Dave, I'm afraid I can't do that." //Numbers divisible by 3
   var beep = "Beep!" //Numbers with zeros
   var boop = "Boop!" //Numbers with ones
+  var finalPhrase = ""; //The final phrase
+
 if (number === NaN) {
   return error;
 } else {
     for (i = 0; i <= number; i++) {
-      if (i % 3 === 0) {
-        console.log(sorry);
-        return sorry;
-      } else if (hasOnes(i)) {
-        return boop;
+      if (i % 3 === 0 && i !== 0) {
+        finalPhrase = finalPhrase.concat(sorry + " ");
+      } else if (i === 1 || hasOnes(i) > 0) {
+        finalPhrase = finalPhrase.concat(boop + " ");
       } else if (hasZeros(i)) {
-        return beep;
+        finalPhrase = finalPhrase.concat(boop + " ");
       }
     }
+    console.log(finalPhrase);
+    return finalPhrase;
   }
 
 }
 
 //Function that checks for ones
-function hasOnes(numberInLoop) {
-  var digits = numberInLoop.toString.split("");
+function hasOnes(number) {
+  var digits = number.toString().split("");
+  var total = 0;
   digits.forEach(function(digit) {
-    if (digit === 0) {
-      return true;
+    if (parseInt(digit) === 1) {
+     total++;
     }
   });
+  return total;
 }
 
 //Function that checks for zeros
-function hasZeros(numberInLoop) {
-  var digits = numberInLoop.toString.split("");
+function hasZeros(number) {
+  var digits = number.toString().split("");
   digits.forEach(function(digit) {
-    if (digit === 1) {
+    if (parseInt(digit) === 0) {
       return true;
     }
   });
