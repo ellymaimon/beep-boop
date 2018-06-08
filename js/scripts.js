@@ -5,7 +5,9 @@
 
 //UI Logic
 $(function() {
-  $("")
+  $("button#submit").click(function() {
+    
+  });
 });
 
 
