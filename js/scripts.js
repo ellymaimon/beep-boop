@@ -14,10 +14,12 @@ if (number === NaN) {
     for (i = 0; i <= number; i++) {
       if (i % 3 === 0 && i !== 0) {
         finalPhrase = finalPhrase.concat(sorry + " ");
-      } else if (i === 1 || hasOnes(i) > 0) {
+      } else if (i === 1 || hasOnes(i) === true) {
         finalPhrase = finalPhrase.concat(boop + " ");
-      } else if (hasZeros(i)) {
-        finalPhrase = finalPhrase.concat(boop + " ");
+      } else if (i === 0 || hasZeros(i) === true) {
+        finalPhrase = finalPhrase.concat(beep + " ");
+      } else {
+        finalPhrase = finalPhrase.concat(i + " ");
       }
     }
     console.log(finalPhrase);
@@ -35,17 +37,23 @@ function hasOnes(number) {
      total++;
     }
   });
-  return total;
+  if (total > 0) {
+    return true;
+  }
 }
 
 //Function that checks for zeros
 function hasZeros(number) {
   var digits = number.toString().split("");
+  var total = 0;
   digits.forEach(function(digit) {
     if (parseInt(digit) === 0) {
-      return true;
+     total++;
     }
   });
+  if (total > 0) {
+    return true;
+  }
 }
 
 
