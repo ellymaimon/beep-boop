@@ -1,12 +1,34 @@
 //Business Logic
+function createPattern(number) {
+  var numberArray = number.split("");
+  console.log(numberArray);
 
+  for (i = 0; i <= number; i++) {
+
+  }
+
+}
 
 
 
 //UI Logic
 $(function() {
   $("button#submit").click(function() {
-    
+
+
+    var initialNumber = parseInt($("#input-number").val());
+
+
+    console.log(initialNumber);
+
+
+    $(".results").show();
+
+
+    var finalAnswer = createPattern(initialNumber);
+
+
+    $("#final-result").text(finalAnswer);
   });
 });
 
