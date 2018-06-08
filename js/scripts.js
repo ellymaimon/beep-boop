@@ -8,24 +8,23 @@ function createPattern(number) {
   var boop = "Boop!" //Numbers with ones
   var finalPhrase = ""; //The final phrase
 
-if (number === NaN) {
-  return error;
-} else {
-    for (i = 0; i <= number; i++) {
-      if (i % 3 === 0 && i !== 0) {
-        finalPhrase = finalPhrase.concat(sorry + " ");
-      } else if (i === 1 || hasOnes(i) === true) {
-        finalPhrase = finalPhrase.concat(boop + " ");
-      } else if (i === 0 || hasZeros(i) === true) {
-        finalPhrase = finalPhrase.concat(beep + " ");
-      } else {
-        finalPhrase = finalPhrase.concat(i + " ");
+  if (Number.isNaN(number) === true) {
+    finalPhrase = finalPhrase.concat(error);
+  } else {
+      for (i = 0; i <= number; i++) {
+        if (i % 3 === 0 && i !== 0) {
+          finalPhrase = finalPhrase.concat(sorry + " ");
+        } else if (i === 1 || hasOnes(i) === true) {
+          finalPhrase = finalPhrase.concat(boop + " ");
+        } else if (i === 0 || hasZeros(i) === true) {
+          finalPhrase = finalPhrase.concat(beep + " ");
+        } else {
+          finalPhrase = finalPhrase.concat(i + " ");
+        }
       }
     }
-    console.log(finalPhrase);
-    return finalPhrase;
-  }
-
+  console.log(finalPhrase);
+  return finalPhrase;
 }
 
 //Function that checks for ones
