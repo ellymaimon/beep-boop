@@ -11,7 +11,7 @@ function createPattern(number, userName) {
 
   if (Number.isNaN(number) === true) {
     finalPhrase = finalPhrase.concat(error);
-  } else if (number > 500) {
+  } else if (number > 1000) {
     finalPhrase = finalPhrase.concat(tooHigh);
   } else {
       for (i = 0; i <= number; i++) {
