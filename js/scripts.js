@@ -3,7 +3,8 @@
 //Function that creates the pattern to be displayed to the user
 function createPattern(number, userName) {
   var error = "Don't be silly. I can't do math on things that aren't a number." //Non-numbers
-  var sorry = "I'm sorry " + userName + ", I'm afraid I can't do that." //Numbers divisible by 3
+  var sorry = whichName(userName); //Numbers divisible by 3
+  console.log(sorry);
   var beep = "Beep!" //Numbers with zeros
   var boop = "Boop!" //Numbers with ones
   var finalPhrase = ""; //The final phrase
@@ -24,6 +25,14 @@ function createPattern(number, userName) {
       }
     }
   return finalPhrase;
+}
+
+function whichName(userName) {
+  if (userName = "") {
+    return "I'm sorry " + userName + ", I'm afraid I can't do that."
+  } else {
+    return "I'm sorry, Dave, I'm afraid I can't do that."
+  }
 }
 
 //Function that checks digits for ones
@@ -68,8 +77,3 @@ $(function() {
     $("#final-result").text(finalAnswer);
   });
 });
-
-// Numbers that contain a 0 are replaced (all digits) with "Beep!"
-// Numbers that contain a 1 are replaced (all digits) with "Boop!"
-// Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm
-// afraid I can't do that."
