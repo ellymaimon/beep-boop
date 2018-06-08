@@ -1,9 +1,9 @@
 //Business Logic
 
 //Function that creates the pattern to be displayed to the user
-function createPattern(number) {
+function createPattern(number, userName) {
   var error = "Don't be silly. I can't do math on things that aren't a number." //Non-numbers
-  var sorry = "I'm sorry Dave, I'm afraid I can't do that." //Numbers divisible by 3
+  var sorry = "I'm sorry " + userName + ", I'm afraid I can't do that." //Numbers divisible by 3
   var beep = "Beep!" //Numbers with zeros
   var boop = "Boop!" //Numbers with ones
   var finalPhrase = ""; //The final phrase
@@ -23,7 +23,6 @@ function createPattern(number) {
         }
       }
     }
-  console.log(finalPhrase);
   return finalPhrase;
 }
 
@@ -62,11 +61,10 @@ $(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     var initialNumber = parseInt($("#input-number").val());
-    var userName = parseInt($("#input-name").val());
-    console.log(initialNumber);
+    var userName = $("#input-name").val();
     $(".pre-submit").hide();
     $(".results").show();
-    var finalAnswer = createPattern(initialNumber);
+    var finalAnswer = createPattern(initialNumber, userName);
     $("#final-result").text(finalAnswer);
   });
 });
