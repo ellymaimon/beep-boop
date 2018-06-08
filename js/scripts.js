@@ -59,7 +59,8 @@ function hasZeros(number) {
 
 //UI Logic
 $(function() {
-  $("button#submit").click(function() {
+  $("form").submit(function(event) {
+    event.preventDefault();
     var initialNumber = parseInt($("#input-number").val());
     var userName = parseInt($("#input-name").val());
     console.log(initialNumber);
