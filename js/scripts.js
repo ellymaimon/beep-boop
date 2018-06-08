@@ -74,6 +74,8 @@ $(function() {
     $(".results").show();
     var finalAnswer = createPattern(initialNumber, userName);
     $("#final-result").text(finalAnswer);
+    var audio = new Audio('audio/halbye.mp3');
+    audio.play();
   });
 
   $("button#restart").click(function(){
