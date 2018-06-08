@@ -6,7 +6,7 @@
 
 ## Description
 
-_This webpage accepts a name and number from the user and outputs a specific phrase for each number starting from 0 and ending at the input number. The main specifications happen for numbers divisible by 3, numbers with a 1 in them, and numbers with a 0 in them, in that order of importance. It also outputs a custom message for numbers divisible by 3 based on the input name. _
+_This webpage accepts a name and number from the user and outputs a specific phrase for each number starting from 0 and ending at the input number. The main specifications happen for numbers divisible by 3, numbers with a 1 in them, and numbers with a 0 in them, in that order of importance. It also outputs a custom message for numbers divisible by 3 based on the input name._
 
 ## Setup/Installation Requirements
 
