@@ -1,6 +1,8 @@
 body {
-  background-color: black;
+  background-color: #131516;
   color: white;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .results {
@@ -8,5 +10,5 @@ body {
 }
 
 img {
-  max-height: 300px;
+  max-height: 250px;
 }
